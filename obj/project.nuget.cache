@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "HQ3ShcicL6L2MG9/D/N3dcLXQQOZBsSlllE+KdZD1MmJRn+8Bul+kATlYRoXsKDfiFwfRFr3yQidhm75ZkmAsw==",
+  "success": true,
+  "projectFilePath": "c:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\prave\\.nuget\\packages\\restsharp\\106.15.0\\restsharp.106.15.0.nupkg.sha512"
+  ],
+  "logs": []
+}

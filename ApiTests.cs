@@ -6,9 +6,7 @@ namespace ApiTests
     {
         public void Test()
         {
-            var api = new Api();
-            var result = api.Get();
-            Console.WriteLine(result);
+           
         }
     }
 }
