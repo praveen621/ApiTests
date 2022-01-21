@@ -1,7 +1,7 @@
 namespace ApiTests
 {
 
-    public partial class Welcome
+    public partial class AllUsers
     {
         public long Page { get; set; }
         public long PerPage { get; set; }
