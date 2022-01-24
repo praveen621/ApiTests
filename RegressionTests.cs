@@ -8,15 +8,10 @@ namespace ApiTests
         [TestMethod]
         public void TestMethod1()
         {
-            var restClient = new RestClient("https://reqres.in");
-            var restRequest = new RestRequest("api/users?page=2", Method.GET);
-            restRequest.AddHeader("content-type", "application/json");
-
-            var response = restClient.Execute<AllUsers>(restRequest);
-            var content = response.Content; // raw content as string
-
-            var users = JsonConvert.DeserializeObject<AllUsers>(content);
-            Assert.AreEqual(users.Data.Count, 6);
+            var users = new Users();
+            var resp = users.GetAllUsers();
+            Assert.AreEqual(resp.Data.Count, 12);
+            Assert.AreEqual(resp.Data[0].Email, "");
         }
     }
     {
@@ -27,5 +22,5 @@ namespace ApiTests
             restRequest.AddHeader("content-type", "application/json");
 
 
-
+        }
 }
