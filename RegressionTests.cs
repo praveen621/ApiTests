@@ -1,4 +1,5 @@
 using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace ApiTests
 {
 [TestClass]
@@ -6,7 +7,7 @@ namespace ApiTests
     public class RegressionTests
     {
         [TestMethod]
-        public void TestMethod1()
+        public void Test_UserCount()
         {
             var users = new Users();
             var resp = users.GetAllUsers();
@@ -14,13 +15,4 @@ namespace ApiTests
             Assert.AreEqual(resp.Data[0].Email, "");
         }
     }
-    {
-        public AllUsers GetAllUsers()
-        {
-            var restClient = new RestClient("https://reqres.in");
-            var restRequest = new RestRequest("api/users?page=2", Method.GET);
-            restRequest.AddHeader("content-type", "application/json");
-
-
-        }
 }

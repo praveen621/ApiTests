@@ -1,5 +1,6 @@
 using System;
-
+using RestSharp;
+using Newtonsoft.Json;
 namespace ApiTests
 {
     public class Users
