@@ -11,7 +11,7 @@ namespace ApiTests
         {
             var users = new Users();
             var resp = users.GetAllUsers();
-            Assert.AreEqual(resp.Data.Count, 12);
+            Assert.AreEqual(12,resp.Data.Count);
             Assert.AreEqual(resp.Data[0].Email, "");
         }
     }
