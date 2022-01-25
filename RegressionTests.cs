@@ -6,12 +6,63 @@ namespace ApiTests
 
     public class RegressionTests
     {
+        public TestContext TestContext { get; set; }
+        [ClassInitialize]
+        public static void SetUpReportsConfig(TestContext context)
+        {
+            var dir = context.TestRunDirectory;
+            Reports.InitializeExtentReports(dir,"Api Test Report,", "Api Regression Test Report");
+        }
+
+        [TestInitialize]
+        public void SetUpTest()
+        {
+            Reports.CreateTest(TestContext.TestName);
+        }
+
+        [TestCleanup]
+        public void CleanUpTest()
+        {
+            var testStatus = TestContext.CurrentTestOutcome;
+            AventStack.ExtentReports.Status  logStatus;
+            switch (testStatus)
+            {
+                case UnitTestOutcome.Failed:
+                    logStatus = AventStack.ExtentReports.Status.Fail;
+                    Reports.TestStatus(logStatus, "Test Failed");
+                    break;
+                case UnitTestOutcome.Inconclusive:
+                    logStatus = AventStack.ExtentReports.Status.Warning;
+                    Reports.TestStatus(logStatus, "Test Inconclusive");
+                    break;
+                case UnitTestOutcome.Passed:
+                    logStatus = AventStack.ExtentReports.Status.Pass;
+                    Reports.TestStatus(logStatus, "Test Passed");
+                    break;
+                case UnitTestOutcome.Timeout:
+                    logStatus = AventStack.ExtentReports.Status.Warning;
+                    Reports.TestStatus(logStatus, "Test Timeout");
+                    break;
+                default:
+                    logStatus = AventStack.ExtentReports.Status.Warning;
+                    Reports.TestStatus(logStatus, "Test Inconclusive");
+                    break;
+            }
+        }
+
+        [ClassCleanup]
+        public static void CleanUpReportsConfig()
+        {
+            Reports.FlushExtentReports();
+        }
+
         [TestMethod]
         public void Test_Pagination()
         {
            var pagination = new ReqResApi<Pagination>();
               var paginationDetails = pagination.GetRequest("api/users?page=2", 2);
             Assert.AreEqual(2, paginationDetails.Page);
+            Reports.Log(AventStack.ExtentReports.Status.Pass, "Test Passed");
             Assert.AreEqual(12, paginationDetails.Total);
             Assert.AreEqual(6, paginationDetails.Data.Count);
             Assert.AreEqual(2,paginationDetails.TotalPages);
