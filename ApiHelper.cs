@@ -18,6 +18,7 @@ namespace ApiTests
         public RestRequest CreateGetRequest()
         {
             RestRequest = new RestRequest(Method.GET);
+            RestRequest.AddHeader("accept", "application/json");
             RestRequest.AddHeader("Content-Type", "application/json");
             return RestRequest;
         }
@@ -57,6 +58,12 @@ namespace ApiTests
             var content = response.Content; // raw content as string
             var resp = JsonConvert.DeserializeObject<Resp>(content);
             return resp;
+        }
+
+        public static string SerializeObject(object obj)
+        {
+            var json = JsonConvert.SerializeObject(obj);
+            return json;
         }
     }
 }

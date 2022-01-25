@@ -13,5 +13,8 @@
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0"/>
 		<PackageReference Include="MSTest.TestAdapter" Version="2.2.8"/>
 		<PackageReference Include="ExtentReports" Version="4.1.0"/>
+		 <Content Include="TestData//createuser.json">
+    		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+  		</Content>
 	</ItemGroup>
 </Project>

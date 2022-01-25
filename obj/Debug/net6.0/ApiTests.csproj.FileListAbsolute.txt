@@ -166,3 +166,4 @@ c:\Git\Copilot_tests\Api_Tests\ApiTests\bin\Debug\net6.0\System.IO.Pipelines.dll
 c:\Git\Copilot_tests\Api_Tests\ApiTests\bin\Debug\net6.0\System.Security.Permissions.dll
 c:\Git\Copilot_tests\Api_Tests\ApiTests\bin\Debug\net6.0\runtimes\win-x64\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 c:\Git\Copilot_tests\Api_Tests\ApiTests\bin\Debug\net6.0\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
+c:\Git\Copilot_tests\Api_Tests\ApiTests\bin\Debug\net6.0\TestData\createuser.json

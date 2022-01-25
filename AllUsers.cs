@@ -39,4 +39,9 @@ namespace ApiTests
         public string Id { get; set; }
         public string Token { get; set; }
     }
+
+       public class RegisterUserError
+    {
+        public string Error { get; set; }
+    }
 }
