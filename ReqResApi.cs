@@ -3,12 +3,12 @@ using RestSharp;
 using Newtonsoft.Json;
 namespace ApiTests
 {
-    public class Users
+    public class ReqResApi
     {
-        public AllUsers GetAllUsers()
+        public AllUsers GetAllUsers(int pageIndex)
         {
           var restClient = new  RestClient("https://reqres.in");
-          var restRequest = new RestRequest("api/users?page=2", Method.GET);
+          var restRequest = new RestRequest($"api/users?page={pageIndex}", Method.GET);
           restRequest.AddHeader("Accept", "application/json");
           
 
