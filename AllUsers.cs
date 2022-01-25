@@ -1,7 +1,7 @@
 namespace ApiTests
 {
 
-    public partial class AllUsers
+    public partial class Pagination
     {
         public long Page { get; set; }
         public long PerPage { get; set; }
@@ -32,5 +32,11 @@ namespace ApiTests
         public string Job { get; set; }
         public long Id { get; set; }
         public DateTimeOffset CreatedAt { get; set; }
+    }
+
+        public class RegisterUser
+    {
+        public string Id { get; set; }
+        public string Token { get; set; }
     }
 }

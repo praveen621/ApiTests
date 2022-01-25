@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace ApiTests  
 {
-    public class ApiHelper
+    public class ApiHelper<T>
     {
         public RestClient RestClient { get; set; }
         public RestRequest RestRequest { get; set; }

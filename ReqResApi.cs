@@ -3,20 +3,26 @@ using RestSharp;
 using Newtonsoft.Json;
 namespace ApiTests
 {
-    public class ReqResApi
+    public class ReqResApi<T>
     {
-        public AllUsers GetAllUsers(int pageIndex)
+        public T GetRequest(string endpoint, int pageIndex)
         {
-          var restClient = new  RestClient("https://reqres.in");
-          var restRequest = new RestRequest($"api/users?page={pageIndex}", Method.GET);
-          restRequest.AddHeader("Accept", "application/json");
-          
-
-            var response = restClient.Execute<AllUsers>(restRequest);
-            var content = response.Content; // raw content as string
-
-            var users = JsonConvert.DeserializeObject<AllUsers>(content);
-            return users;
+          var api = new ApiHelper<T>();
+          var url = api.SetEndpointUrl(endpoint);
+          var request = api.CreateGetRequest();
+          var response = api.ExecuteRequest();
+          var paginationDetails = api.GetResponse<T>(response);
+          return paginationDetails;
     }
-}
+
+    public T PostRequest(string endpoint, dynamic payload)
+    {
+      var user = new ApiHelper<T>();
+      var url = user.SetEndpointUrl(endpoint);
+      var request = user.CreatePostRequest(payload);
+      var response = user.ExecuteRequest();
+      var resp = user.GetResponse<T>(response);
+      return resp;
+    }
+    }
 }

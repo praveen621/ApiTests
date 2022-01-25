@@ -9,26 +9,34 @@ namespace ApiTests
         [TestMethod]
         public void Test_Pagination()
         {
-            var api = new ReqResApi();
-            var resp = api.GetAllUsers(2);
-            Assert.AreEqual(2,resp.Page);
-            Assert.AreEqual(6,resp.PerPage);
-            Assert.AreEqual(12,resp.Total);
-            Assert.AreEqual(2,resp.TotalPages);
+           var pagination = new ReqResApi<Pagination>();
+              var paginationDetails = pagination.GetRequest("api/users?page=2", 2);
+            Assert.AreEqual(2, paginationDetails.Page);
+            Assert.AreEqual(12, paginationDetails.Total);
+            Assert.AreEqual(6, paginationDetails.Data.Count);
+            Assert.AreEqual(2,paginationDetails.TotalPages);
         }
         
         [TestMethod]
         public void Test_CreateUser()
         {
             string payload = "{\"name\":\"morpheus\",\"job\":\"leader\"}";
-            var api = new ApiHelper();
-            var url = api.SetEndpointUrl("api/users");
-            var request = api.CreatePostRequest(payload);
-            var response = api.ExecuteRequest();
-            var resp = api.GetResponse<CreateUser>(response);
-            Assert.AreEqual("morpheus",resp.Name);
-            Assert.AreEqual("leader",resp.Job);
-            Assert.IsNotNull(resp.Id);
+            var user = new ReqResApi<CreateUser>();
+            var createdUser = user.PostRequest("api/users", payload);
+            Assert.AreEqual("morpheus",createdUser.Name);
+            Assert.AreEqual("leader",createdUser.Job);
+            Assert.IsNotNull(createdUser.Id);
+        }
+
+         [TestMethod]
+        public void Test_RegisterUser_Success()
+        {
+            string payload = "{\"email\":\"eve.holt@reqres.in\",\"password\":\"pistol\"}";
+            var reg = new ReqResApi<RegisterUser>();
+            var registerUser = reg.PostRequest("api/register", payload);
+            Assert.IsNotNull(registerUser.Id);
+            Assert.IsNotNull(registerUser.Token);
+            
         }
     }
 }
