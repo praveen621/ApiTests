@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj": {}
+    "C:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj": {}
   },
   "projects": {
-    "c:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj": {
+    "C:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj",
+        "projectUniqueName": "C:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj",
         "projectName": "ApiTests",
-        "projectPath": "c:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj",
+        "projectPath": "C:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\ApiTests.csproj",
         "packagesPath": "C:\\Users\\prave\\.nuget\\packages\\",
-        "outputPath": "c:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\obj\\",
+        "outputPath": "C:\\Git\\Copilot_tests\\Api_Tests\\ApiTests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -70,6 +70,22 @@
             "RestSharp": {
               "target": "Package",
               "version": "[106.15.0, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.9.40, )"
+            },
+            "SpecFlow.CustomPlugin": {
+              "target": "Package",
+              "version": "[3.9.40, )"
+            },
+            "SpecFlow.MsTest": {
+              "target": "Package",
+              "version": "[3.9.40, )"
+            },
+            "SpecFlow.Tools.MsBuild.Generation": {
+              "target": "Package",
+              "version": "[3.9.40, )"
             }
           },
           "imports": [
