@@ -13,8 +13,12 @@
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0"/>
 		<PackageReference Include="MSTest.TestAdapter" Version="2.2.8"/>
 		<PackageReference Include="ExtentReports" Version="4.1.0"/>
-		 <Content Include="TestData//createuser.json">
-    		<CopyToOutputDirectory>Always</CopyToOutputDirectory>
-  		</Content>
+		<Content Include="TestData//createuser.json">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+		<PackageReference Include="SpecFlow" Version="3.9.40"/>
+		<PackageReference Include="SpecFlow.MsTest" Version="3.9.40"/>
+		<PackageReference Include="SpecFlow.Tools.MsBuild.Generation" Version="3.9.40"/>
+		<PackageReference Include="SpecFlow.CustomPlugin" Version="3.9.40"/>
 	</ItemGroup>
 </Project>
