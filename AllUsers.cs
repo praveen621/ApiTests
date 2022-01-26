@@ -26,7 +26,7 @@ namespace ApiTests
         public string Text { get; set; }
     }
 
-     public class CreateUser
+    public class CreateUser
     {
         public string Name { get; set; }
         public string Job { get; set; }
@@ -34,14 +34,19 @@ namespace ApiTests
         public DateTimeOffset CreatedAt { get; set; }
     }
 
-        public class RegisterUser
+    public class RegisterUser
     {
         public string Id { get; set; }
         public string Token { get; set; }
     }
 
-       public class RegisterUserError
+    public class RegisterUserError
     {
         public string Error { get; set; }
+    }
+
+    public class Test
+    {
+ public string test{get; set;}
     }
 }
