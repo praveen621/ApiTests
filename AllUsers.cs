@@ -4,9 +4,9 @@ namespace ApiTests
     public partial class Pagination
     {
         public long Page { get; set; }
-        public long PerPage { get; set; }
+        public long Per_Page { get; set; }
         public long Total { get; set; }
-        public long TotalPages { get; set; }
+        public long Total_Pages { get; set; }
         public List<User> Data { get; set; }
         public Support Support { get; set; }
     }

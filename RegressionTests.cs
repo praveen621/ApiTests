@@ -65,7 +65,7 @@ namespace ApiTests
             Reports.Log(AventStack.ExtentReports.Status.Pass, "Test Passed");
             Assert.AreEqual(12, paginationDetails.Total);
             Assert.AreEqual(6, paginationDetails.Data.Count);
-            Assert.AreEqual(2, paginationDetails.TotalPages);
+            Assert.AreEqual(2, paginationDetails.Total_Pages);
         }
 
         [TestMethod]
