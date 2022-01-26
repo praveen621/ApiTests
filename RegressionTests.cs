@@ -72,7 +72,7 @@ namespace ApiTests
         public void Test_SingleUser()
         {
             var user = new ReqResApi<User>();
-            var userDetails = user.GetRequest("api/users/2");
+            var userDetails = user.GetRequest("api/users/3");
             Assert.AreEqual(2, userDetails.Id);
             Assert.AreEqual("Janet", userDetails.FirstName);
             Assert.AreEqual("Weaver", userDetails.LastName);
